@@ -101,4 +101,29 @@ function multigreeting(name, language){
 // Date objects.
 // If the birth date is after than the current date, return nothing.
 
-function howOld ()
+function howOld (birthdate, dateNow){
+    var birthYear = birthdate.getFullYear()
+    var currentYear = dateNow.getFullYear()
+    var birthMonth = birthdate.getMonth()
+    var currentMonth = dateNow.getMonth()
+    var birthDay = birthdate.getDate()
+    var currentDay = dateNow.getDate()
+    var ageInYears = currentYear-birthYear
+    if(birthMonth > currentMonth){
+        ageInYears = ageInYears - 1;
+    }else if (birthMonth === currentMonth){
+        if (birthDay > currentDay){
+            ageInYears = ageInYears - 1;
+        }
+    }
+    return ageInYears;
+}
+
+
+
+
+
+
+// var dateCalculation = currentDate - birthdate
+// var ageInYears=dateCalculation/3.154.toExponential(10)
+// return ageInYears
