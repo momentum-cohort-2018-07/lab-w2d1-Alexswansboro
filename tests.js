@@ -135,6 +135,10 @@ describe('howOld', function () {
     assert.equal(0, howOld(new Date(2018, 1, 1), new Date(2018, 1, 1)));
   })
   it('should calculate the age correctly in a year after your birthday', function () {
+    assert.equal(31, howOld(new Date(1986, 8, 27), new Date(2018, 7, 5)));
+    assert.equal(33, howOld(new Date(1985, 5, 4), new Date(2018, 7, 5)));
+  })
+  it('should calculate the age correctly in a year after your birthday', function () {
     assert.equal(41, howOld(new Date(1976, 9, 4), new Date(2017, 9, 10)));
     assert.equal(41, howOld(new Date(1976, 9, 4), new Date(2017, 10, 10)));
   })
